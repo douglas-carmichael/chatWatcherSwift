@@ -1,0 +1,331 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A3067A0D1DDF5580002186FC /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3067A0B1DDF5204002186FC /* Starscream.framework */; };
+		A3067A0E1DDF5580002186FC /* Starscream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A3067A0B1DDF5204002186FC /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A3D77B2F1DBC6BA000343908 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D77B2E1DBC6BA000343908 /* AppDelegate.swift */; };
+		A3D77B311DBC6BA000343908 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D77B301DBC6BA000343908 /* ViewController.swift */; };
+		A3D77B331DBC6BA000343908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3D77B321DBC6BA000343908 /* Assets.xcassets */; };
+		A3D77B361DBC6BA000343908 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3D77B341DBC6BA000343908 /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A3D77B481DBC72BB00343908 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A3067A0E1DDF5580002186FC /* Starscream.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A3067A0B1DDF5204002186FC /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Starscream.framework; sourceTree = "<group>"; };
+		A3D77B2B1DBC6BA000343908 /* chatWatcherSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chatWatcherSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3D77B2E1DBC6BA000343908 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A3D77B301DBC6BA000343908 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A3D77B321DBC6BA000343908 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A3D77B351DBC6BA000343908 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A3D77B371DBC6BA000343908 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A3D77B281DBC6BA000343908 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3067A0D1DDF5580002186FC /* Starscream.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A3D77B221DBC6BA000343908 = {
+			isa = PBXGroup;
+			children = (
+				A3D77B2D1DBC6BA000343908 /* chatWatcherSwift */,
+				A3D77B2C1DBC6BA000343908 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A3D77B2C1DBC6BA000343908 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A3D77B2B1DBC6BA000343908 /* chatWatcherSwift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A3D77B2D1DBC6BA000343908 /* chatWatcherSwift */ = {
+			isa = PBXGroup;
+			children = (
+				A3D77B2E1DBC6BA000343908 /* AppDelegate.swift */,
+				A3D77B301DBC6BA000343908 /* ViewController.swift */,
+				A3D77B321DBC6BA000343908 /* Assets.xcassets */,
+				A3D77B341DBC6BA000343908 /* Main.storyboard */,
+				A3D77B371DBC6BA000343908 /* Info.plist */,
+				A3067A0B1DDF5204002186FC /* Starscream.framework */,
+			);
+			path = chatWatcherSwift;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A3D77B2A1DBC6BA000343908 /* chatWatcherSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3D77B3A1DBC6BA000343908 /* Build configuration list for PBXNativeTarget "chatWatcherSwift" */;
+			buildPhases = (
+				A3D77B271DBC6BA000343908 /* Sources */,
+				A3D77B281DBC6BA000343908 /* Frameworks */,
+				A3D77B291DBC6BA000343908 /* Resources */,
+				A3D77B481DBC72BB00343908 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = chatWatcherSwift;
+			productName = chatWatcherSwift;
+			productReference = A3D77B2B1DBC6BA000343908 /* chatWatcherSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A3D77B231DBC6BA000343908 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Douglas Carmichael";
+				TargetAttributes = {
+					A3D77B2A1DBC6BA000343908 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 7VLPNC6E86;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A3D77B261DBC6BA000343908 /* Build configuration list for PBXProject "chatWatcherSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A3D77B221DBC6BA000343908;
+			productRefGroup = A3D77B2C1DBC6BA000343908 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A3D77B2A1DBC6BA000343908 /* chatWatcherSwift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A3D77B291DBC6BA000343908 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3D77B331DBC6BA000343908 /* Assets.xcassets in Resources */,
+				A3D77B361DBC6BA000343908 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A3D77B271DBC6BA000343908 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3D77B311DBC6BA000343908 /* ViewController.swift in Sources */,
+				A3D77B2F1DBC6BA000343908 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A3D77B341DBC6BA000343908 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A3D77B351DBC6BA000343908 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A3D77B381DBC6BA000343908 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A3D77B391DBC6BA000343908 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		A3D77B3B1DBC6BA000343908 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7VLPNC6E86;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/chatWatcherSwift",
+				);
+				INFOPLIST_FILE = chatWatcherSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.dcarmichael.chatWatcherSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A3D77B3C1DBC6BA000343908 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7VLPNC6E86;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/chatWatcherSwift",
+				);
+				INFOPLIST_FILE = chatWatcherSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.dcarmichael.chatWatcherSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A3D77B261DBC6BA000343908 /* Build configuration list for PBXProject "chatWatcherSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3D77B381DBC6BA000343908 /* Debug */,
+				A3D77B391DBC6BA000343908 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A3D77B3A1DBC6BA000343908 /* Build configuration list for PBXNativeTarget "chatWatcherSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3D77B3B1DBC6BA000343908 /* Debug */,
+				A3D77B3C1DBC6BA000343908 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A3D77B231DBC6BA000343908 /* Project object */;
+}
