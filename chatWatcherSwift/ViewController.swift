@@ -18,6 +18,7 @@ class ViewController: NSViewController, WebSocketDelegate {
         super.viewDidLoad()
         socket.delegate = self
         // Do any additional setup after loading the view.
+        
     }
 
     override var representedObject: Any? {
@@ -34,11 +35,17 @@ class ViewController: NSViewController, WebSocketDelegate {
 
     func websocketDidConnect(socket: WebSocket) {
         print("websocket is connected")
-        let authKey = ""
-        let ourNickname = "dcarmich"
-        socket.write(string: "CAP REQ :twitch.tv/tags twitch.tv/commands twitch.tv/membership")
-        socket.write(string: "PASS oauth:" + authKey)
-        socket.write(string: "NICK " + ourNickname)
+        let defaultAuthKey = UserDefaults.standard.string(forKey: "twitchAuthKey") ?? "nullKey"
+        let ourNickname = UserDefaults.standard.string(forKey: "twitchNickname") ?? "dcarmich"
+        let ourChannel = UserDefaults.standard.string(forKey: "twitchChannel") ?? "streamerhouse"
+        if (defaultAuthKey != "nullKey") {
+            socket.write(string: "CAP REQ :twitch.tv/tags twitch.tv/commands twitch.tv/membership")
+            socket.write(string: "PASS oauth:" + defaultAuthKey)
+            socket.write(string: "NICK " + ourNickname)
+            socket.write(string: "JOIN #" + ourChannel)
+        } else {
+            print("unable to connect: Twitch OAuth key invalid")
+        }
     }
     
     func websocketDidDisconnect(socket: WebSocket, error: NSError?) {
@@ -111,11 +118,6 @@ class ViewController: NSViewController, WebSocketDelegate {
         return messageParam[1]
     }
     
-    
-    @IBAction func goChannel(_ sender: NSButton) {
-        let channel = "professorbroman"
-        socket.write(string: "JOIN #" + channel)
-    }
     
     @IBAction func disconnectTwitch(_ sender: AnyObject) {
         
