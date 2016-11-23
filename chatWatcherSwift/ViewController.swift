@@ -113,6 +113,13 @@ class ViewController: NSViewController, WebSocketDelegate {
         
     }
     
+    func sendChannelMessage(ourMessage: String)
+    {
+        let ourChannel = UserDefaults.standard.string(forKey: "twitchChannel") ?? "streamerhouse"
+        let msgString = NSString(format: "PRIVMSG #%@: %@", ourChannel, ourMessage)
+        socket.write(string: msgString as String)
+    }
+    
     func getMsgParamValue(messageInfo: String) -> String {
         let messageParam = messageInfo.components(separatedBy: "=")
         return messageParam[1]
