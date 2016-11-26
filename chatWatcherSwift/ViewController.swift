@@ -9,7 +9,7 @@
 import Cocoa
 import Starscream
 
-class ViewController: NSViewController, WebSocketDelegate {
+class ViewController: NSViewController, WebSocketDelegate, NSUserNotificationCenterDelegate {
 
     @IBOutlet var myTextView: NSTextView!
     var socket = WebSocket(url: URL(string: "wss://irc-ws.chat.twitch.tv:443")!)
@@ -17,6 +17,7 @@ class ViewController: NSViewController, WebSocketDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         socket.delegate = self
+        NSUserNotificationCenter.default.delegate = self
         // Do any additional setup after loading the view.
         
     }
@@ -33,6 +34,16 @@ class ViewController: NSViewController, WebSocketDelegate {
 
     }
 
+    func showNotice(ourNoticeText: String)
+    {
+        let ourNotifier = NSUserNotification.init()
+        ourNotifier.title = "chatWatcherSwift"
+        ourNotifier.informativeText = ourNoticeText
+        ourNotifier.soundName = NSUserNotificationDefaultSoundName
+        ourNotifier.hasActionButton = true
+        NSUserNotificationCenter.default.deliver(ourNotifier)
+
+    }
     func websocketDidConnect(socket: WebSocket) {
         print("websocket is connected")
         let defaultAuthKey = UserDefaults.standard.string(forKey: "twitchAuthKey") ?? "nullKey"
@@ -43,6 +54,9 @@ class ViewController: NSViewController, WebSocketDelegate {
             socket.write(string: "PASS oauth:" + defaultAuthKey)
             socket.write(string: "NICK " + ourNickname)
             socket.write(string: "JOIN #" + ourChannel)
+            
+            // Notify the user we're connected
+            showNotice(ourNoticeText: "Connected to channel: " + ourChannel)
         } else {
             print("unable to connect: Twitch OAuth key invalid")
         }
@@ -100,9 +114,17 @@ class ViewController: NSViewController, WebSocketDelegate {
                 for i in 4...stringCount {
                     privMsg += "\(splitString[i]) "
                 }
-                let newString = NSString(format: "%@%@: %@", oldString!,displayedName,
-                                         privMsg[privMsg.index(privMsg.startIndex, offsetBy: 1)..<privMsg.endIndex])
-                myTextView.string = newString as String
+                
+                // Proof of concept user-notification code
+                let userToNotify = "morwic"
+                let userNotifyString = "@" + userToNotify
+                let ourMessage = privMsg[privMsg.index(privMsg.startIndex, offsetBy: 1)..<privMsg.endIndex]
+                let msgString = NSString(format: "%@: %@", displayedName, ourMessage)
+                let msgViewString = NSString(format: "%@%@", oldString!, msgString)
+                if ourMessage.lowercased().range(of: userNotifyString) != nil {
+                    showNotice(ourNoticeText: msgString)
+                }
+                myTextView.string = msgViewString as String
                 myTextView.scrollToEndOfDocument(self)
             }
         }
@@ -125,7 +147,10 @@ class ViewController: NSViewController, WebSocketDelegate {
         return messageParam[1]
     }
     
-    
+    func userNotificationCenter(_ center: NSUserNotificationCenter, shouldPresent notification: NSUserNotification) -> Bool {
+        return true
+    }
+ 
     @IBAction func disconnectTwitch(_ sender: AnyObject) {
         
         socket.disconnect()
