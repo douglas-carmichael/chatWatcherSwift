@@ -7,4 +7,5 @@ framework module Starscream {
 
 module Starscream.Swift {
     header "Starscream-Swift.h"
+    requires objc
 }
