@@ -204,6 +204,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 @property (nonatomic, readonly, copy) NSString * _Nonnull headerWSProtocolName;
 @property (nonatomic, readonly, copy) NSString * _Nonnull headerWSVersionName;
 @property (nonatomic, readonly, copy) NSString * _Nonnull headerWSVersionValue;
+@property (nonatomic, readonly, copy) NSString * _Nonnull headerWSExtensionName;
 @property (nonatomic, readonly, copy) NSString * _Nonnull headerWSKeyName;
 @property (nonatomic, readonly, copy) NSString * _Nonnull headerOriginName;
 @property (nonatomic, readonly, copy) NSString * _Nonnull headerWSAcceptName;
@@ -211,6 +212,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 @property (nonatomic, readonly) uint8_t FinMask;
 @property (nonatomic, readonly) uint8_t OpCodeMask;
 @property (nonatomic, readonly) uint8_t RSVMask;
+@property (nonatomic, readonly) uint8_t RSV1Mask;
 @property (nonatomic, readonly) uint8_t MaskMask;
 @property (nonatomic, readonly) uint8_t PayloadLenMask;
 @property (nonatomic, readonly) NSInteger MaxFrameSize;
@@ -222,8 +224,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 @property (nonatomic, copy) void (^ _Nullable onData)(NSData * _Nonnull);
 @property (nonatomic, copy) void (^ _Nullable onPong)(NSData * _Nullable);
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nonnull headers;
-@property (nonatomic) BOOL voipEnabled;
 @property (nonatomic) BOOL disableSSLCertValidation;
+@property (nonatomic) BOOL enableCompression;
 @property (nonatomic, copy) NSArray<NSNumber *> * _Nullable enabledSSLCipherSuites;
 @property (nonatomic, copy) NSString * _Nullable origin;
 @property (nonatomic) NSInteger timeout;
@@ -253,6 +255,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 - (void)writeWithPing:(NSData * _Nonnull)ping completion:(void (^ _Nullable)(void))completion;
 /// Delegate for the stream methods. Processes incoming bytes
 - (void)stream:(NSStream * _Nonnull)aStream handleEvent:(NSStreamEvent)eventCode;
+/// Parses the extension header, setting up the compression parameters.
+- (void)processExtensionHeader:(NSString * _Nonnull)extensionHeader;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 

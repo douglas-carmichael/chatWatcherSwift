@@ -53,7 +53,7 @@ class ViewController: NSViewController, WebSocketDelegate, NSUserNotificationCen
 //        let ourNickname = UserDefaults.standard.string(forKey: "twitchNickname") ?? "dcarmich"
 //        let ourChannel = UserDefaults.standard.string(forKey: "twitchChannel") ?? "simcopter1"
         let ourNickname = "dcarmich"
-        let ourChannel = "stimpy3d"
+        let ourChannel = "streamerhouse"
         if (defaultAuthKey != "nullKey") {
             socket.write(string: "CAP REQ :twitch.tv/tags twitch.tv/commands twitch.tv/membership")
             socket.write(string: "PASS oauth:" + defaultAuthKey)
