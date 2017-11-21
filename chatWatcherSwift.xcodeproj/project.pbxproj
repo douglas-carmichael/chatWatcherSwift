@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A3D2337B1F7253100023B98E /* Starscream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A3D233791F7252D40023B98E /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A3883C7A1FC3C5A400F2ED97 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3883C791FC3C5A400F2ED97 /* Starscream.framework */; };
+		A3883C7B1FC3C5E300F2ED97 /* Starscream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A3883C791FC3C5A400F2ED97 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A3D77B2F1DBC6BA000343908 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D77B2E1DBC6BA000343908 /* AppDelegate.swift */; };
 		A3D77B311DBC6BA000343908 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D77B301DBC6BA000343908 /* ViewController.swift */; };
 		A3D77B331DBC6BA000343908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3D77B321DBC6BA000343908 /* Assets.xcassets */; };
@@ -21,7 +22,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A3D2337B1F7253100023B98E /* Starscream.framework in Embed Frameworks */,
+				A3883C7B1FC3C5E300F2ED97 /* Starscream.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -29,7 +30,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A3D233791F7252D40023B98E /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Starscream.framework; sourceTree = "<group>"; };
+		A3883C791FC3C5A400F2ED97 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Starscream.framework; sourceTree = "<group>"; };
 		A3D77B2B1DBC6BA000343908 /* chatWatcherSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chatWatcherSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D77B2E1DBC6BA000343908 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3D77B301DBC6BA000343908 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3883C7A1FC3C5A400F2ED97 /* Starscream.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +75,7 @@
 				A3D77B321DBC6BA000343908 /* Assets.xcassets */,
 				A3D77B341DBC6BA000343908 /* Main.storyboard */,
 				A3D77B371DBC6BA000343908 /* Info.plist */,
-				A3D233791F7252D40023B98E /* Starscream.framework */,
+				A3883C791FC3C5A400F2ED97 /* Starscream.framework */,
 			);
 			path = chatWatcherSwift;
 			sourceTree = "<group>";

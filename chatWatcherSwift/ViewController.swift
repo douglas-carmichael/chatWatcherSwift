@@ -10,6 +10,22 @@ import Cocoa
 import Starscream
 
 class ViewController: NSViewController, WebSocketDelegate, NSUserNotificationCenterDelegate {
+//    func websocketDidConnect(socket: WebSocketClient) {
+//        <#code#>
+//    }
+//
+//    func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
+//        <#code#>
+//    }
+//
+//    func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
+//        <#code#>
+//    }
+//
+//    func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
+//        <#code#>
+//    }
+//
 
     @IBOutlet var myTextView: NSTextView!
     @objc var socket = WebSocket(url: URL(string: "wss://irc-ws.chat.twitch.tv:443")!)
@@ -35,7 +51,7 @@ class ViewController: NSViewController, WebSocketDelegate, NSUserNotificationCen
     }
 
     @IBAction func hiStimpy(_sender: AnyObject) {
-        sendChannelMessage(ourMessage: "Hello @Stimpy3D from dcarmich's chat watcher in Swift!");
+//        sendChannelMessage(ourMessage: "Hello @Talk2MeGooseman from dcarmich's chat watcher in Swift!");
         
     }
     @objc func showNotice(ourNoticeText: String)
@@ -48,12 +64,10 @@ class ViewController: NSViewController, WebSocketDelegate, NSUserNotificationCen
         NSUserNotificationCenter.default.deliver(ourNotifier)
 
     }
-    @objc func websocketDidConnect(socket: WebSocket) {
-        let defaultAuthKey = UserDefaults.standard.string(forKey: "twitchAuthKey") ?? "nullKey"
-//        let ourNickname = UserDefaults.standard.string(forKey: "twitchNickname") ?? "dcarmich"
-//        let ourChannel = UserDefaults.standard.string(forKey: "twitchChannel") ?? "simcopter1"
-        let ourNickname = "dcarmich"
-        let ourChannel = "streamerhouse"
+    func websocketDidConnect(socket: WebSocketClient) {
+        let defaultAuthKey = UserDefaults.standard.string(forKey: "twitchAuthKey") ?? "g89moa2glyhye6gy6vyy9da2ltgmy5"
+       let ourNickname = UserDefaults.standard.string(forKey: "twitchNickname") ?? "dcarmich"
+      let ourChannel = UserDefaults.standard.string(forKey: "twitchChannel") ?? "professorbroman"
         if (defaultAuthKey != "nullKey") {
             socket.write(string: "CAP REQ :twitch.tv/tags twitch.tv/commands twitch.tv/membership")
             socket.write(string: "PASS oauth:" + defaultAuthKey)
@@ -67,7 +81,7 @@ class ViewController: NSViewController, WebSocketDelegate, NSUserNotificationCen
         }
     }
     
-    @objc func websocketDidDisconnect(socket: WebSocket, error: NSError?) {
+    func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
         if let e = error {
             print("websocket is disconnected: \(e.localizedDescription)")
         } else {
@@ -75,7 +89,7 @@ class ViewController: NSViewController, WebSocketDelegate, NSUserNotificationCen
         }
     }
     
-    @objc func websocketDidReceiveMessage(socket: WebSocket, text: String) {
+    func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
         if text.range(of:"PING") != nil {
             socket.write(string: "PONG :tmi.twitch.tv")
         }
@@ -102,7 +116,7 @@ class ViewController: NSViewController, WebSocketDelegate, NSUserNotificationCen
                 if (messageData.count >= 2)
                 {
                     let tmiName = getMsgParamValue(messageInfo: messageData[2])
-                    if (tmiName.characters.count > 0)
+                    if (tmiName.count > 0)
                     {
                         displayedName = tmiName
                     }
@@ -121,7 +135,7 @@ class ViewController: NSViewController, WebSocketDelegate, NSUserNotificationCen
                 }
                 
                 // Proof of concept user-notification code
-                let userToNotify = "simcopter1"
+                let userToNotify = "deadpoolyplays"
                 let userNotifyString = "@" + userToNotify.lowercased()
                 let ourMessage = privMsg[privMsg.index(privMsg.startIndex, offsetBy: 1)..<privMsg.endIndex]
                 let msgString = NSString(format: "%@: %@", displayedName, ourMessage as CVarArg)
@@ -135,21 +149,21 @@ class ViewController: NSViewController, WebSocketDelegate, NSUserNotificationCen
         }
     }
     
-    @objc func websocketDidReceiveData(socket: WebSocket, data: Data) {
+    func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
         print("Received data: \(data.count)")
         
     }
     
-    @objc func sendChannelMessage(ourMessage: String)
+    func sendChannelMessage(ourMessage: String)
     {
      //   let ourChannel = UserDefaults.standard.string(forKey: "twitchChannel") ?? "stimpy3d"
-        let ourChannel = "stimpy3d"
+        let ourChannel = "talk2megooseman"
         let msgString = NSString(format: "PRIVMSG #%@ :%@", ourChannel, ourMessage)
         print("Message sent: \(msgString)")
         socket.write(string: msgString as String)
     }
     
-    @objc func getMsgParamValue(messageInfo: String) -> String {
+    func getMsgParamValue(messageInfo: String) -> String {
         let messageParam = messageInfo.components(separatedBy: "=")
         return messageParam[1]
     }
